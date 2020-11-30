@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 app.use(express.static(__dirname+'/dist'));
 app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
+    res.sendFile(path.join(__dirname+'/dist/index.html'));
 });
 
 mongoose.connect( config.db.uri);
