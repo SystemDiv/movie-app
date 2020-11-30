@@ -13,7 +13,7 @@ app.use(bodyParser.json({ limit: '10mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 app.use(express.static(__dirname+'/dist'));
-app.get('/*', function (req, res) {
+app.get(config.app.clientRoutes, function (req, res) {
     res.sendFile(path.join(__dirname+'/dist/index.html'));
 });
 
