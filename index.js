@@ -12,7 +12,7 @@ app.options('*', cors());
 app.use(bodyParser.json({ limit: '10mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(__dirname+'/dist'));
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
